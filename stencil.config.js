@@ -1,4 +1,6 @@
 exports.config = {
+  //generateDistribution: true,
+  namespace: "myStencils"
 };
 
 exports.devServer = {

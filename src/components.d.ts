@@ -78,6 +78,36 @@ declare global {
 
 
 import {
+  JSONDisplay as JsonDisplay
+} from './components/json-display/json-display';
+
+declare global {
+  interface HTMLJsonDisplayElement extends JsonDisplay, HTMLStencilElement {
+  }
+  var HTMLJsonDisplayElement: {
+    prototype: HTMLJsonDisplayElement;
+    new (): HTMLJsonDisplayElement;
+  };
+  interface HTMLElementTagNameMap {
+    "json-display": HTMLJsonDisplayElement;
+  }
+  interface ElementTagNameMap {
+    "json-display": HTMLJsonDisplayElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "json-display": JSXElements.JsonDisplayAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface JsonDisplayAttributes extends HTMLAttributes {
+      endpoint?: string;
+    }
+  }
+}
+
+
+import {
   MyApp as MyApp
 } from './components/my-app/my-app';
 
@@ -102,6 +132,36 @@ declare global {
   namespace JSXElements {
     export interface MyAppAttributes extends HTMLAttributes {
       
+    }
+  }
+}
+
+
+import {
+  StencilTextBox as StencilTextbox
+} from './components/stencil-textbox/stencil-textbox';
+
+declare global {
+  interface HTMLStencilTextboxElement extends StencilTextbox, HTMLStencilElement {
+  }
+  var HTMLStencilTextboxElement: {
+    prototype: HTMLStencilTextboxElement;
+    new (): HTMLStencilTextboxElement;
+  };
+  interface HTMLElementTagNameMap {
+    "stencil-textbox": HTMLStencilTextboxElement;
+  }
+  interface ElementTagNameMap {
+    "stencil-textbox": HTMLStencilTextboxElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "stencil-textbox": JSXElements.StencilTextboxAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface StencilTextboxAttributes extends HTMLAttributes {
+      name?: string;
     }
   }
 }
